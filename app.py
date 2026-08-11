@@ -127,7 +127,7 @@ with tab1:
     col_a, col_b = st.columns(2)
     
     with col_a:
-        monthly = df.set_index('Order_Date').resample('M')[['Total_Revenue', 'Total_Profit']].sum().reset_index()
+        monthly = df.set_index('Order_Date').resample('ME')[['Total_Revenue', 'Total_Profit']].sum().reset_index()
         fig_line = px.line(
             monthly, x='Order_Date', y=['Total_Revenue', 'Total_Profit'],
             labels={'value': 'USD ($)', 'variable': 'Metric', 'Order_Date': 'Timeline'},
